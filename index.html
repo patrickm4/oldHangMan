@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hangingman</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="display">
+    <div id="hangman">
+      <img id="peep" src="person.svg"/>
+    </div>
+    <div id="inOutWindow">
+      Pick a Letter:
+      <form id="mainInp">
+        <input type="text" id="deGuess" size="3" required>
+        <input type="submit" id="deSubmit">
+        <button id="reload">Reload Page</button>
+      </form>
+      <div id="displayWord"></div>
+      <div id="deWord"></div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
