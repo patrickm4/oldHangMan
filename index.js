@@ -6,6 +6,7 @@ var wordDisp = document.getElementById("deWord");
 var chosenCarMake = carMake[whichWord];
 var checkLines = [];
 var guesses = [];
+const alreadyGuess = [];
 var score = 0;
 var hmw = 60;
 
@@ -36,7 +37,12 @@ $(document).ready(function() {
 
     var ans = $("#inputGuess").val();
 
-    checkForLetter(ans);
+    //check if they already guess letter
+    if (alreadyGuess.includes(ans)) {
+      alert("Already tried that letter");
+    } else {
+      checkForLetter(ans);
+    }
 
     document.getElementById("mainInp").reset();
   });
@@ -46,6 +52,7 @@ $(document).ready(function() {
       if (chosenCarMake.indexOf(userGuess) != -1) {
         console.log(chosenCarMake.indexOf(userGuess) + "yes");
         $("#hangman").animate({ backgroundColor: "green" }, 100);
+        alreadyGuess.push(userGuess);
         checkLetter(userGuess);
         break;
       } else {
@@ -54,6 +61,7 @@ $(document).ready(function() {
         var letterDiv = document.createElement("div");
         letterDiv.innerHTML = userGuess.toUpperCase();
         wordDisp.appendChild(letterDiv);
+        alreadyGuess.push(userGuess);
         score++;
         hmw -= 8;
         $("#hangman").animate({ width: hmw + "vw" }, 100);
