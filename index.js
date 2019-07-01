@@ -46,7 +46,6 @@ $(document).ready(function() {
       if (chosenCarMake.indexOf(userGuess) != -1) {
         console.log(chosenCarMake.indexOf(userGuess) + "yes");
         $("#hangman").animate({ backgroundColor: "green" }, 100);
-        document.getElementById("gameTitle").innerHTML = "You Win !";
         checkLetter(userGuess);
         break;
       } else {
@@ -96,6 +95,9 @@ $(document).ready(function() {
     }
     if (guesses.join("|") === guessWordSplitted.join("|")) {
       $("body").animate({ backgroundColor: "green" }, 1000);
+      document.getElementById("gameTitle").innerHTML = "You Win !";
+      $("#inputGuess").hide();
+      $("#deSubmit").hide();
       $("#reload").show();
     } else {
       guesses = [];
