@@ -24,6 +24,12 @@ function displayWordToGuess() {
   }
 }
 
+hideForm = () => {
+  $("#inputGuess").hide();
+  $("#deSubmit").hide();
+  $("#reload").show();
+};
+
 $(document).ready(function() {
   displayWordToGuess();
   $("#inputGuess").focus();
@@ -72,7 +78,7 @@ $(document).ready(function() {
         if (score >= 7) {
           $("body").animate({ backgroundColor: "red" }, 1000);
           $("#peep").hide(1000);
-          $("#reload").show();
+          hideForm();
           document.getElementById("gameTitle").innerHTML = "Try again!";
         }
         break;
@@ -104,9 +110,7 @@ $(document).ready(function() {
     if (guesses.join("|") === guessWordSplitted.join("|")) {
       $("body").animate({ backgroundColor: "green" }, 1000);
       document.getElementById("gameTitle").innerHTML = "You Win !";
-      $("#inputGuess").hide();
-      $("#deSubmit").hide();
-      $("#reload").show();
+      hideForm();
     } else {
       guesses = [];
     }
