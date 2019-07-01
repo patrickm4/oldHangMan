@@ -1,6 +1,6 @@
 var carMake = ["toyota", "honda", "nissan", "mazda"];
 var whichWord = Math.round(Math.random() * 3 + 0);
-var est = document.getElementById("deGuess").value;
+var est = document.getElementById("inputGuess").value;
 var guessWord = document.getElementById("displayWord");
 var wordDisp = document.getElementById("deWord");
 var chosenCarMake = carMake[whichWord];
@@ -25,6 +25,7 @@ function displayWordToGuess() {
 
 $(document).ready(function() {
   displayWordToGuess();
+  $("#inputGuess").focus();
   $("#reload").hide();
   $(".RedPoint").hide();
   $("#reload").click(function() {
@@ -33,7 +34,7 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
-    var ans = $("#deGuess").val();
+    var ans = $("#inputGuess").val();
 
     checkForLetter(ans);
 
@@ -45,13 +46,14 @@ $(document).ready(function() {
       if (chosenCarMake.indexOf(userGuess) != -1) {
         console.log(chosenCarMake.indexOf(userGuess) + "yes");
         $("#hangman").animate({ backgroundColor: "green" }, 100);
+        document.getElementById("gameTitle").innerHTML = "You Win !";
         checkLetter(userGuess);
         break;
       } else {
         console.log(chosenCarMake.indexOf(userGuess) + "No");
         $("#hangman").animate({ backgroundColor: "red" }, 100);
         var letterDiv = document.createElement("div");
-        letterDiv.innerHTML = userGuess;
+        letterDiv.innerHTML = userGuess.toUpperCase();
         wordDisp.appendChild(letterDiv);
         score++;
         hmw -= 8;
