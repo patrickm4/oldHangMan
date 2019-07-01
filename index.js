@@ -26,6 +26,7 @@ function displayWordToGuess() {
 $(document).ready(function() {
   displayWordToGuess();
   $("#reload").hide();
+  $(".RedPoint").hide();
   $("#reload").click(function() {
     location.reload();
   });
@@ -53,12 +54,17 @@ $(document).ready(function() {
         letterDiv.innerHTML = userGuess;
         wordDisp.appendChild(letterDiv);
         score++;
-        hmw -= 9;
+        hmw -= 8;
         $("#hangman").animate({ width: hmw + "vw" }, 100);
+        if (score == 6) {
+          document.getElementById("gameTitle").innerHTML = "Last Chance";
+          $(".RedPoint").show(500);
+        }
         if (score >= 7) {
           $("body").animate({ backgroundColor: "red" }, 1000);
           $("#peep").hide(1000);
           $("#reload").show();
+          document.getElementById("gameTitle").innerHTML = "Try again!";
         }
         break;
       }

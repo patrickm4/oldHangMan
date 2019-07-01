@@ -1,14 +1,32 @@
-body{
+body {
   background-color: black;
 }
-#peep{
-  margin-top: 230px;
+#peep {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#gameTitle {
+  color: black;
+  font-size: 34pt;
+  margin-bottom: -66px;
+}
+.RedPoint {
+  color: white;
+  font-size: 55pt;
+  position: absolute;
+  bottom: 0;
+  left: -100;
+  right: 0;
+  margin: auto;
 }
 #hangman {
   position: absolute;
-  left:0;
-  top:70px;
-  right:0;
+  left: 0;
+  top: 70px;
+  right: 0;
   margin: auto;
   background-color: aquamarine;
   width: 60vw;
@@ -16,51 +34,51 @@ body{
   text-align: center;
 }
 #inOutWindow {
-  position:absolute;
-  left:0;
-  right:0;
-  top:450px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 450px;
   margin: auto;
   background-color: white;
   width: 60vw;
   height: 200px;
 }
-#deGuess{
-  position:absolute;
-  left:100px;
-  top:0;
+#deGuess {
+  position: absolute;
+  left: 100px;
+  top: 0;
   margin: auto;
 }
-#deSubmit{
+#deSubmit {
   position: absolute;
   left: 170px;
-  top:0;
+  top: 0;
   margin: auto;
 }
-#reload{
-    position: absolute;
-    left: 250px;
-    top:0;
-    margin:auto;
+#reload {
+  position: absolute;
+  left: 250px;
+  top: 0;
+  margin: auto;
 }
 /*Display invalid letters*/
-#deWord{
+#deWord {
   position: absolute;
-  left:0;
-  bottom:0;
+  left: 0;
+  bottom: 0;
   margin: auto;
   font-size: 15pt;
   margin-bottom: 15px;
   width: 400px;
-  height:80px;
+  height: 80px;
   display: flex;
   justify-content: space-around;
 }
-#displayWord{
+#displayWord {
   font-size: 15pt;
   margin-top: 15px;
   width: 300px;
-  height:80px;
+  height: 80px;
   display: flex;
   justify-content: space-around;
 }
