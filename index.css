@@ -9,18 +9,13 @@ body {
   margin: auto;
 }
 #gameTitle {
-  color: black;
+  color: white;
   font-size: 34pt;
-  margin-bottom: -66px;
+  text-align: center;
 }
 .RedPoint {
   color: white;
-  font-size: 55pt;
-  position: absolute;
-  bottom: 0;
-  left: -100;
-  right: 0;
-  margin: auto;
+  font-size: 155pt;
 }
 #hangman {
   position: absolute;

@@ -72,12 +72,12 @@ $(document).ready(function() {
         hmw -= 8;
         $("#hangman").animate({ width: hmw + "vw" }, 100);
         if (score == 6) {
-          document.getElementById("gameTitle").innerHTML = "Last Chance";
           $(".RedPoint").show(500);
         }
         if (score >= 7) {
           $("body").animate({ backgroundColor: "red" }, 1000);
           $("#peep").hide(1000);
+          $(".RedPoint").hide(200);
           hideForm();
           document.getElementById("gameTitle").innerHTML = "Try again!";
         }
